@@ -18,7 +18,7 @@
                 clear-icon="mdi-close-circle"
                 label="Box One"
                 value=""
-                v-model="this.TextAreaOne"
+                v-model="TextAreaOne"
             ></v-textarea>
             <v-spacer />
             <hr />
@@ -40,7 +40,7 @@
                 clear-icon="mdi-close-circle"
                 label="Box Two"
                 value=""
-                v-model="this.TextAreatwo"
+                v-model="TextAreatwo"
             ></v-textarea>
                 <v-btn
                 @click="this.FetchAndCompare"
@@ -58,6 +58,7 @@
 </template>
 
 <script>
+//
 import {diff} from 'jest-diff';
 export default {
     data() {
