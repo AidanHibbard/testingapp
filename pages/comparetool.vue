@@ -17,7 +17,6 @@
                 clearable
                 clear-icon="mdi-close-circle"
                 label="Box One"
-                value=""
                 v-model="TextAreaOne"
             ></v-textarea>
             <v-spacer />
@@ -39,8 +38,7 @@
                 clearable
                 clear-icon="mdi-close-circle"
                 label="Box Two"
-                value=""
-                v-model="TextAreatwo"
+                v-model="TextAreaTwo"
             ></v-textarea>
                 <v-btn
                 @click="this.FetchAndCompare"
@@ -77,30 +75,32 @@ export default {
             let a, b;
             if (this.CboxOne === true) {
                 // Gql req
-                a = await this.$axios.$get({
-                    url: `${this.UrlOne}`,
+                a = await this.$axios({
+                    BaseURL: `${this.UrlOne}`,
                     method: 'post',
                     data: {
                         query: `${this.TextAreaOne}`, // Add in text field value
                     }
                 })
+            } else if (this.TextAreaOne != null && this.CboxOne === false) {
+                a = this.TextAreaOne
             } else {
                 // Check for payload in text area then go for regular req
-                if (this.TextAreaOne != null) a = this.TextAreaOne
                 a = await this.$axios.$get(`${this.UrlOne}`)
             }
             if (this.CboxTwo === true) {
                 // gql req
-                b = await this.$axios.$get({
-                    url: `${this.UrlTwo}`,
+                b = await this.$axios({
+                    BaseURL: `${this.UrlTwo}`,
                     method: 'post',
                     data: {
                         query: `${this.TextAreaTwo}`, // Add in text field value
                     }
                 })
+            } else if (this.TextAreaTwo != null && this.CboxTwo === false) {
+                b = this.TextAreaTwo
             } else {
                 // Check for payload in text area then go for regular req
-                if (this.TextAreaTwo != null) b = this.TextAreaTwo
                 b = await this.$axios.$get(`${this.UrlTwo}`)
             } 
             this.PayloadDiff = diff(a,b)
