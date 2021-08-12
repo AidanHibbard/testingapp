@@ -7,11 +7,11 @@
                 v-model="UrlOne"
                 outlined
             ></v-text-field>
+            <p>Or enter a payload you'd like to compare <br /> (note: For graphQL requests please paste the request in here and select GraphQL)</p>
             <v-checkbox
                 v-model="CboxOne"
                 :label="`GraphQl ${CboxOne.toString()}`"
             ></v-checkbox>
-            <p>Or enter a payload you'd like to compare <br /> (note: For graphQL requests please paste the request in here and select GraphQL)</p>
             <v-textarea
                 outlined
                 clearable
@@ -28,11 +28,11 @@
                 v-model="UrlTwo"
                 outlined
             ></v-text-field>
+            <p>Or enter a payload you'd like to compare <br /> (note: For graphQL requests please paste the request in here and select GraphQL)</p>
             <v-checkbox
                 v-model="CboxTwo"
                 :label="`GraphQl ${CboxTwo.toString()}`"
             ></v-checkbox>
-            <p>Or enter a payload you'd like to compare <br /> (note: For graphQL requests please paste the request in here and select GraphQL)</p>
                 <v-textarea
                 outlined
                 clearable
