@@ -73,6 +73,7 @@ export default {
     methods: {
         async FetchAndCompare() {
             let a, b;
+            // A
             if (this.CboxOne === true) {
                 // Gql req
                 a = await this.$axios({
@@ -88,6 +89,7 @@ export default {
                 // Check for payload in text area then go for regular req
                 a = await this.$axios.$get(`${this.UrlOne}`)
             }
+            // B 
             if (this.CboxTwo === true) {
                 // gql req
                 b = await this.$axios({
