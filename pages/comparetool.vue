@@ -45,6 +45,7 @@
                     Compare
                 </v-btn>
         </v-form>
+        <br />
         <div v-if="this.PayloadDiff === null">
             Nothing to compare
         </div>

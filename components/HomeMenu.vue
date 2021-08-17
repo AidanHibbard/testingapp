@@ -12,7 +12,9 @@
         </v-card-text>
         <v-spacer />
         <v-btn>
+            <NuxtLink to="/comparetool">
             Open
+            </NuxtLink>
         </v-btn>
         </v-card>
     </v-col>
