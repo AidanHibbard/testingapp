@@ -20,7 +20,6 @@
                 v-model="TextAreaOne"
             ></v-textarea>
             <v-spacer />
-            <hr />
             <v-spacer />
             <v-text-field
                 label="URL Two"
