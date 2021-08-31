@@ -75,7 +75,7 @@ export default {
             let a, b;
             // A
             if (this.CboxOne === true) {
-                // Checks if first text field is true
+                // Checks if first checkbox is true
                 a = await this.$axios({ // Basic axios graphql request
                     BaseURL: `${this.UrlOne}`,
                     method: 'post',
@@ -92,7 +92,7 @@ export default {
             }
             // B 
             if (this.CboxTwo === true) {
-                // Checks if first text field is true
+                // Checks if second checkbox is true
                 b = await this.$axios({ // Basic axios graphql request
                     BaseURL: `${this.UrlTwo}`,
                     method: 'post',
