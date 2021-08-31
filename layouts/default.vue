@@ -4,8 +4,9 @@
       dark
     >
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
-
-      <v-toolbar-title>Testing App</v-toolbar-title>
+      <NuxtLink to="/">
+        <v-toolbar-title>Testing App</v-toolbar-title>
+      </NuxtLink>
     </v-app-bar>
 
     <v-navigation-drawer
