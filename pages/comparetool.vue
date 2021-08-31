@@ -75,34 +75,36 @@ export default {
             let a, b;
             // A
             if (this.CboxOne === true) {
-                // Gql req
-                a = await this.$axios({
+                // Checks if first text field is true
+                a = await this.$axios({ // Basic axios graphql request
                     BaseURL: `${this.UrlOne}`,
                     method: 'post',
                     data: {
-                        query: `${this.TextAreaOne}`, // Add in text field value
+                        query: `${this.TextAreaOne}`, // Add in first text field value
                     }
                 })
-            } else if (this.TextAreaOne != null && this.CboxOne === false) {
+                // Check if the text area has a value and the first URL box is empty
+            } else if (this.TextAreaOne != null && this.UrlOne === null) {
                 a = this.TextAreaOne
             } else {
-                // Check for payload in text area then go for regular req
+                // If nothing else hit the provided first URL
                 a = await this.$axios.$get(`${this.UrlOne}`)
             }
             // B 
             if (this.CboxTwo === true) {
-                // gql req
-                b = await this.$axios({
+                // Checks if first text field is true
+                b = await this.$axios({ // Basic axios graphql request
                     BaseURL: `${this.UrlTwo}`,
                     method: 'post',
                     data: {
-                        query: `${this.TextAreaTwo}`, // Add in text field value
+                        query: `${this.TextAreaTwo}`, // Add in second text field value
                     }
                 })
-            } else if (this.TextAreaTwo != null && this.CboxTwo === false) {
+                // Check if the text area has a value and the second URL box is empty
+            } else if (this.TextAreaTwo != null && this.UrlTwo === null) {
                 b = this.TextAreaTwo
             } else {
-                // Check for payload in text area then go for regular req
+                // If nothing else hit the provided second URL
                 b = await this.$axios.$get(`${this.UrlTwo}`)
             } 
             this.PayloadDiff = diff(a,b)
